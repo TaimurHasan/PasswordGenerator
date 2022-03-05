@@ -5,12 +5,19 @@ var availCharacters = {
   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   lowercase: "abcdefghijklmnopqrstuvwxyz",
   numbers: "0123456789",
-  special: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+  special: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+  reset: function () {
+    this.uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    this.lowercase = "abcdefghijklmnopqrstuvwxyz",
+    this.numbers = "0123456789",
+    this.special = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" 
+  }
 }
 
 //MAIN ASSIGNMENT CODE FOR GENERATING PASSWORD
 var generatePassword = function() {
   var genConfirm = window.confirm("Let's generate your password! Please press 'OK' to get started in specifying your preferred criteria.");
+  availCharacters.reset();
 
   //starts prompts and code only if user confirms that they would like to get started
   if (genConfirm) {
@@ -36,6 +43,33 @@ var generatePassword = function() {
     var confirmLowercase = window.confirm("Please click 'OK' if you would like your password to include lowercase characters");
     var confirmNumbers = window.confirm("Please click 'OK' if you would like your password to include numbers");
     var confirmSpecial = window.confirm("Please click 'OK' if you would like your password to include special characters");
+
+    //RANDOM TEXT GENERATOR LOOP
+
+    //AVAILABLE CHARACTERS CREATOR
+    if (!confirmUppercase) {
+      availCharacters.uppercase = "";
+    }
+    if (!confirmLowercase) {
+      availCharacters.lowercase = "";
+    }
+    if (!confirmNumbers) {
+      availCharacters.numbers = "";
+    }
+    if (!confirmSpecial) {
+      availCharacters.special = "";
+    }
+
+    var characterList = availCharacters.uppercase + availCharacters.lowercase + availCharacters.numbers + availCharacters.special;
+    console.log(characterList)
+
+    //RANDOM CHARACTER GENERATOR
+    var result = "";
+    for (var i = 0; i <= 8-1; i++) {
+      result += characterList.charAt(Math.floor(Math.random() * characterList.length));
+    }
+
+    console.log(result);
 
   } else { // if initial confirm window is cancelled, returns nothing
     return "";
