@@ -6,7 +6,7 @@ var availCharacters = {
   lowercase: "abcdefghijklmnopqrstuvwxyz",
   numbers: "0123456789",
   special: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
-  reset: function () {
+  reset: function () {//will reset available character list if generate passworld clicked again
     this.uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     this.lowercase = "abcdefghijklmnopqrstuvwxyz",
     this.numbers = "0123456789",
@@ -16,14 +16,16 @@ var availCharacters = {
 
 //MAIN ASSIGNMENT CODE FOR GENERATING PASSWORD
 var generatePassword = function() {
-  var genConfirm = window.confirm("Let's generate your password! Please press 'OK' to get started in specifying your preferred criteria.");
-  availCharacters.reset();
+  var genConfirm = window.confirm(
+    "Let's generate your password! Please press 'OK' to get started in specifying your preferred criteria."
+    );
+    availCharacters.reset();
 
-  //starts prompts and code only if user confirms that they would like to get started
-  if (genConfirm) {
+    //starts prompts and code only if user confirms that they would like to get started
+    if (genConfirm) {
 
    
-    //variable and prompt for length of password
+    //function for prompt and validation for length of password
     var passLengthValue = function () {
       var passLength = Number(window.prompt("Please specify the number of characters preferred for your password (enter a NUMBER between 8 and 128)"));
 
@@ -36,18 +38,23 @@ var generatePassword = function() {
       
     }
     
+    //storing password length in variable to be called back
     var passLengthFinal = passLengthValue();
-    console.log(passLengthFinal);
+   
   
-  
+      var confirmUppercase = false;
+      var confirmLowercase = false;
+      var confirmNumbers = false;
+      var confirmSpecial = false;
 
     //variables and prompts for all other password criteria
-    var confirmUppercase = window.confirm("Please click 'OK' if you would like your password to include uppercase characters");
-    var confirmLowercase = window.confirm("Please click 'OK' if you would like your password to include lowercase characters");
-    var confirmNumbers = window.confirm("Please click 'OK' if you would like your password to include numbers");
-    var confirmSpecial = window.confirm("Please click 'OK' if you would like your password to include special characters");
-
-    //RANDOM TEXT GENERATOR LOOP
+    while (confirmUppercase === false && confirmLowercase === false && confirmNumbers === false && confirmSpecial === false) {
+      window.alert("Please confirm at least one character type");
+      var confirmUppercase = window.confirm("Please click 'OK' if you would like your password to include uppercase characters");
+      var confirmLowercase = window.confirm("Please click 'OK' if you would like your password to include lowercase characters");
+      var confirmNumbers = window.confirm("Please click 'OK' if you would like your password to include numbers");
+      var confirmSpecial = window.confirm("Please click 'OK' if you would like your password to include special characters");
+    }
 
     //AVAILABLE CHARACTERS CREATOR
     if (!confirmUppercase) {
@@ -75,8 +82,8 @@ var generatePassword = function() {
 
     console.log(result);
 
-  } else { // if initial confirm window is cancelled, returns nothing
-    return "";
+    } else { // if initial confirm window is cancelled, returns nothing
+      return "";
   }
 
 var finalPassword = result;
