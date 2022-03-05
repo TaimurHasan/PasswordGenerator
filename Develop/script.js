@@ -1,5 +1,10 @@
 // Assignment code here
 
+var generatePassword = function() {
+  console.log("TEST");
+  var test = "ok";
+  return test;
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -15,3 +20,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
