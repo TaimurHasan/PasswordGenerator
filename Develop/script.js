@@ -25,7 +25,7 @@ var generatePassword = function() {
     if (genConfirm) {
 
    
-    //function for prompt and validation for length of password
+    //function expression for prompt and validation for length of password
     var passLengthValue = function () {
       var passLength = Number(window.prompt("Please specify the number of characters preferred for your password (enter a NUMBER between 8 and 128)"));
 
@@ -86,8 +86,8 @@ var generatePassword = function() {
       return "";
   }
 
-var finalPassword = result;
-return finalPassword;
+  var finalPassword = result;
+  return finalPassword;
  
 };
 
