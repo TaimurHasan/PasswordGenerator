@@ -22,7 +22,7 @@ var generatePassword = function() {
   //starts prompts and code only if user confirms that they would like to get started
   if (genConfirm) {
 
-    var passLength = "";
+   
     //variable and prompt for length of password
     var passLengthValue = function () {
       var passLength = Number(window.prompt("Please specify the number of characters preferred for your password (enter a NUMBER between 8 and 128)"));
@@ -36,7 +36,10 @@ var generatePassword = function() {
       
     }
     
-    window.alert("You have chosen " + passLengthValue() + " as your password length!")
+    var passLengthFinal = passLengthValue();
+    console.log(passLengthFinal);
+  
+  
 
     //variables and prompts for all other password criteria
     var confirmUppercase = window.confirm("Please click 'OK' if you would like your password to include uppercase characters");
@@ -64,8 +67,9 @@ var generatePassword = function() {
     console.log(characterList)
 
     //RANDOM CHARACTER GENERATOR
+    
     var result = "";
-    for (var i = 0; i <= 8-1; i++) {
+    for (var i = 0; i <= passLengthFinal - 1; i++) {
       result += characterList.charAt(Math.floor(Math.random() * characterList.length));
     }
 
@@ -75,7 +79,9 @@ var generatePassword = function() {
     return "";
   }
 
-  return passLength;
+var finalPassword = result;
+return finalPassword;
+ 
 };
 
 
