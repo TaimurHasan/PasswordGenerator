@@ -30,7 +30,7 @@ var generatePassword = function() {
       var passLength = Number(window.prompt("Please specify the number of characters preferred for your password (enter a NUMBER between 8 and 128)"));
 
       if (isNaN(passLength) || passLength < 8 || passLength > 128) {
-        alert("Please enter only a NUMBER between 8 and 128");
+        alert("Please enter only a NUMBER between 8 and 128!");
         return passLengthValue();
       } else {
         return passLength;
@@ -40,8 +40,11 @@ var generatePassword = function() {
     
     //storing password length in variable to be called back
     var passLengthFinal = passLengthValue();
-   
-  
+    window.alert("Your password will contain " + passLengthFinal + " characters!")
+    
+
+
+    //creating variables to store user preference on character types
       var confirmUppercase = false;
       var confirmLowercase = false;
       var confirmNumbers = false;
@@ -49,11 +52,11 @@ var generatePassword = function() {
 
     //variables and prompts for all other password criteria
     while (confirmUppercase === false && confirmLowercase === false && confirmNumbers === false && confirmSpecial === false) {
-      window.alert("Please confirm at least one character type");
-      var confirmUppercase = window.confirm("Please click 'OK' if you would like your password to include uppercase characters");
-      var confirmLowercase = window.confirm("Please click 'OK' if you would like your password to include lowercase characters");
-      var confirmNumbers = window.confirm("Please click 'OK' if you would like your password to include numbers");
-      var confirmSpecial = window.confirm("Please click 'OK' if you would like your password to include special characters");
+      window.alert("Please confirm at least one character type.");
+      var confirmUppercase = window.confirm("Please click 'OK' if you would like your password to include uppercase characters.");
+      var confirmLowercase = window.confirm("Please click 'OK' if you would like your password to include lowercase characters.");
+      var confirmNumbers = window.confirm("Please click 'OK' if you would like your password to include numbers.");
+      var confirmSpecial = window.confirm("Please click 'OK' if you would like your password to include special characters.");
     }
 
     //AVAILABLE CHARACTERS CREATOR
