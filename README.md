@@ -50,5 +50,5 @@ THEN the password is either displayed in an alert or written to the page <br/>
 
 ** Screenshot of Application
 
-
+![Password Generator Application Screenshot](./assets/images/Screenshot%202022-03-08%20174202.png)
 

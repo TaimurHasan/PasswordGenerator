@@ -29,8 +29,11 @@ var generatePassword = function() {
     var passLengthValue = function () {
       var passLength = Number(window.prompt("Please specify the number of characters preferred for your password (enter a NUMBER between 8 and 128)"));
 
-      if (isNaN(passLength) || passLength < 8 || passLength > 128) {
-        alert("Please enter only a NUMBER between 8 and 128!");
+      //check if password length is a decimal
+      var hasDecimal = passLength % 1;
+
+      if (isNaN(passLength) || passLength < 8 || passLength > 128 || hasDecimal) {
+        alert("Please enter only a WHOLE NUMBER between 8 and 128!");
         return passLengthValue();
       } else {
         return passLength;
