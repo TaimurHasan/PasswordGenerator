@@ -74,7 +74,6 @@ var generatePassword = function() {
     }
 
     var characterList = availCharacters.uppercase + availCharacters.lowercase + availCharacters.numbers + availCharacters.special;
-    console.log(characterList)
 
     //RANDOM CHARACTER GENERATOR
     
@@ -83,7 +82,6 @@ var generatePassword = function() {
       result += characterList.charAt(Math.floor(Math.random() * characterList.length));
     }
 
-    console.log(result);
 
     } else { // if initial confirm window is cancelled, returns nothing
       return "";
