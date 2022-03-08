@@ -14,7 +14,7 @@ You will be prompted on the following criteria:
 
 ## Application Details
 
-The application was built primarily using JavaScript, with support from HTML and CSS to host the tool. Within JavaScript, a combination of objects and methods were used, including variables, functions, loops, and control flows. The tool uses The tool uses prompts, variables, and if statements to create a special character list dependent on the user's input and preference on uppercase, lowercase, numbers, and special characters. The tool is programmed to force the user to confirm at least one character type to prevent generating an empty password. Lastly, the tool uses a for loop and the random method within the Math object to select random characters out of the available character list up to the password length that the user requested.
+The application was built primarily using JavaScript, with support from HTML and CSS to host the tool. Within JavaScript, a combination of objects and methods were used, including variables, functions, loops, and control flows. The tool uses prompts, variables, and if statements to create a special character list dependent on the user's input and preference on uppercase, lowercase, numbers, and special characters. The tool is programmed to force the user to confirm at least one character type to prevent generating an empty password and to select a WHOLE number between 8 and 128 characters. Lastly, the tool uses a for loop and the random method within the Math object to select random characters out of the available character list up to the password length that the user requested.
 
 ** Languages Used **
 - HTML
