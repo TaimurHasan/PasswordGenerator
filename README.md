@@ -49,6 +49,5 @@ THEN the password is either displayed in an alert or written to the page <br/>
 [Password Generator](https://taimurhasan.github.io/PasswordGenerator/)
 
 **Screenshot of Application**
-
 ![Password Generator Application Screenshot](./assets/images/Screenshot%202022-03-08%20174202.png)
 
